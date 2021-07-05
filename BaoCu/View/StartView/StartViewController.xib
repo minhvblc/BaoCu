@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="BaoCu" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bao_cu" translatesAutoresizingMaskIntoConstraints="NO" id="07G-ks-8rO">
+                    <rect key="frame" x="71.5" y="380.5" width="271" height="145"/>
+                </imageView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qsr-u9-OQA">
+                    <rect key="frame" x="187" y="535.5" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="2sj-qX-fcz"/>
+                        <constraint firstAttribute="height" constant="40" id="LZm-RA-bir"/>
+                    </constraints>
+                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="1" green="0.58823529411764708" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="tintColor" red="0.92941176469999998" green="0.50472552299999995" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="07G-ks-8rO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="BvI-lB-oXd"/>
+                <constraint firstItem="07G-ks-8rO" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.654589" id="DkY-p9-IfU"/>
+                <constraint firstItem="qsr-u9-OQA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="dll-vz-RFp"/>
+                <constraint firstItem="07G-ks-8rO" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.16183" id="dp2-4a-uaQ"/>
+                <constraint firstItem="07G-ks-8rO" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="p12-40-0x3"/>
+                <constraint firstItem="qsr-u9-OQA" firstAttribute="top" secondItem="07G-ks-8rO" secondAttribute="bottom" constant="10" id="zuG-dH-hKH"/>
+            </constraints>
+            <point key="canvasLocation" x="6" y="101"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bao_cu" width="99" height="76"/>
+    </resources>
+</document>
