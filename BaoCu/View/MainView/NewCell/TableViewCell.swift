@@ -9,6 +9,7 @@ import UIKit
 import SDWebImage
 class TableViewCell: UITableViewCell {
     var item: Item?
+    var isChoose  = false
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pubDateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -38,8 +39,9 @@ class TableViewCell: UITableViewCell {
         bigView.layer.cornerRadius = 10
         self.bigView.layer.shadowColor = UIColor.black.cgColor
         self.bigView.layer.shadowOpacity = 0.5
-        self.bigView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        self.bigView.layer.shadowOffset = CGSize(width: 5, height: 5)
         self.bigView.layer.shadowRadius = 4.0
+        
         
     }
 

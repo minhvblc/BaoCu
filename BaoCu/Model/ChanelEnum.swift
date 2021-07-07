@@ -7,8 +7,9 @@
 
 import Foundation
 enum ChannelURL : String,  CaseIterable{
-    case sucKhoe = "https://vnexpress.net/rss/suc-khoe.rss"
+   
     case trangChu = "https://vnexpress.net/rss/tin-moi-nhat.rss"
+    case sucKhoe = "https://vnexpress.net/rss/suc-khoe.rss"
     case theGioi = "https://vnexpress.net/rss/the-gioi.rss"
     case giaDinh = "https://vnexpress.net/rss/gia-dinh.rss"
     case thoiSu = "https://vnexpress.net/rss/thoi-su.rss"
@@ -45,8 +46,8 @@ enum ChannelURL : String,  CaseIterable{
     }
 }
 enum ChannelName : String, CaseIterable{
-    case sucKhoe = "Sức khoẻ"
     case trangChu = "Trang chủ"
+    case sucKhoe = "Sức khoẻ"
     case theGioi = "Thế giới"
     case giaDinh = "Gia đình"
     case thoiSu = "Thời sự"

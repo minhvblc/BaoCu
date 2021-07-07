@@ -8,8 +8,8 @@
 import UIKit
 
 class MenuTableViewController: UITableViewController {
-   
-    var pickDone : ((_ url: String, _ name: String)->Void)?
+    var type : ChannelName?
+    var pickDone : ((_ url: String, _ name: ChannelName)->Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,13 +42,17 @@ class MenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
         cell.textLabel?.text = ChannelName.element(at: indexPath.row)?.rawValue
+        cell.textLabel?.textColor = (ChannelName.element(at: indexPath.row) == type) ? .red : .label
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let channel = ChannelURL.element(at: indexPath.row), let pickDone = pickDone, let name = ChannelName.element(at: indexPath.row)?.rawValue{
-            pickDone(channel.rawValue, name)
+        
+        type = ChannelName.element(at: indexPath.row) ?? .thoiSu
+        if let channel = ChannelURL.element(at: indexPath.row), let pickDone = pickDone, let type = ChannelName.element(at: indexPath.row){
+            pickDone(channel.rawValue, type)
             self.dismiss(animated: true, completion: nil)
         }
+        
         
     }
     
