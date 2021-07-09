@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
         initUI()
         
     }
-    //r
+    //refresh data
     @objc func refresh(_ sender: AnyObject?) {
         self.service.parseNew(url: url, completionHandler: { (items) in
             self.items = items
@@ -66,7 +66,11 @@ class MainViewController: UIViewController {
         menu?.leftSide = true
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        menu?.animationOptions = .curveEaseInOut
+        menu?.presentationStyle = .menuDissolveIn
+      
     }
+   
     func initUI(){
         self.title = "Trang chủ"
         tableView.reloadData()
@@ -91,7 +95,15 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
         cell.initUI(item: items[indexPath.row])
-        
+        cell.presentShare = {
+            let stringURL = self.items[indexPath.row].link?.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .newlines)
+           
+            guard let url = URL(string: stringURL ?? "") else { return }
+            let items = [url]
+            let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+            self.present(ac, animated: true, completion: nil)
+            
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -101,4 +113,10 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate{
         present(vc, animated: true, completion: nil)
     }
     
+  
+    
+    
 }
+
+
+

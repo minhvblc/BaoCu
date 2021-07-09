@@ -96,22 +96,7 @@ extension NewService: XMLParserDelegate {
         let s = String(data: CDATABlock, encoding: .utf8)
         if currentElement == "description"{
             currentDescriptionNews += s!
-//            let types: NSTextCheckingResult.CheckingType = [ .link]
-//            let detector = try? NSDataDetector(types: types.rawValue)
-//
-            
-//            let matches = detector?.matches(in: currentDescriptionNews, options: [], range: NSMakeRange(0, currentDescriptionNews.count))
-//            if let matches = matches{
-//                print(matches.count)
-//                if matches.count > 0{
-//                    let match = matches[1]
-//                    linkHrefImg = match.url?.absoluteString ?? ""
-//                }else{
-//                    linkHrefImg = currentLink
-//                }
-//
-//            }
-          
+
             do {
                
                 let doc: Document = try SwiftSoup.parse(currentDescriptionNews)

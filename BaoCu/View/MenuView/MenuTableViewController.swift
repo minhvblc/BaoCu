@@ -6,12 +6,21 @@
 //
 
 import UIKit
-
+import SideMenu
 class MenuTableViewController: UITableViewController {
+    
+    
     var type : ChannelName?
+    
     var pickDone : ((_ url: String, _ name: ChannelName)->Void)?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let sideMenuNavigationController = navigationController as? SideMenuNavigationController else { return }
+        sideMenuNavigationController.presentationStyle = .menuSlideIn
+        
+        sideMenuNavigationController.blurEffectStyle = .dark
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
      initUI()

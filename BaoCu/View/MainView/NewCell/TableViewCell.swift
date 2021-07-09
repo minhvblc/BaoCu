@@ -10,6 +10,11 @@ import SDWebImage
 class TableViewCell: UITableViewCell {
     var item: Item?
     var isChoose  = false
+    // share closure
+    var presentShare : (() -> Void)?
+    
+    //IbOutlet
+    
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pubDateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -22,8 +27,13 @@ class TableViewCell: UITableViewCell {
         
         // Initialization code
     }
+    @IBAction func shareBtn(_ sender: Any) {
+        print("Aaaaa")
+        if let presentShare = presentShare{
+            presentShare()
+        }
+    }
     func initUI(item :Item){
-       
         descriptionLabel.text = item.descriptionNews?.description
         titleLabel.text = item.title
         pubDateLabel.text = item.pubDate

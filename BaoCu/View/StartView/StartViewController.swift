@@ -8,8 +8,12 @@
 import UIKit
 
 class StartViewController: UIViewController {
+    
+    
     var items : [Item]?
     var url: String = "https://vnexpress.net/rss/tin-moi-nhat.rss"
+    
+    
     func setUpData(){
         NewService.shared.parseNew(url: url) { (items) in
             self.items = items
@@ -64,7 +68,7 @@ class StartViewController: UIViewController {
         
         center.add(request) { (error) in
            if error != nil {
-            print(error?.localizedDescription)
+            print(error?.localizedDescription ?? "error")
            }
            else{
             print("ok")

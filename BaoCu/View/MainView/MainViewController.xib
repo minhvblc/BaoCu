@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -37,7 +38,7 @@
     </objects>
     <resources>
         <namedColor name="cellColor">
-            <color red="1" green="0.58823529411764708" blue="0.094117647058823528" alpha="0.52411383824632662" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58799999952316284" blue="0.093999996781349182" alpha="0.52399998903274536" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
